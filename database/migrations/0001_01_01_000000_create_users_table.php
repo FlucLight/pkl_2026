@@ -20,6 +20,8 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('nomer_induk')->unique()->comment('NIM untuk Mahasiswa, NIP/NIDN untuk Dosen');
+            $table->enum('role', ['admin', 'dosen', 'mahasiswa'])->default('mahasiswa');
             $table->timestamps();
         });
 

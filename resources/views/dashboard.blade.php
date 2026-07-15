@@ -9,8 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
                <h1 class="text-2xl font-bold text-gray-900 dark:text-white p-6">
-    Welcome to the Dashboard
-</h1>
+                    Welcome to the Dashboard
+               </h1>
             </div>
         </div>
     </div>

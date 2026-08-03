@@ -7,11 +7,11 @@
   <title>prototype pertama gw jir</title>
   <meta name="description"
     content="Template website HTML5 polos dengan background video looping, header putih kecil, hidebar drawer bold list, dan pop-up login modal.">
-  <link rel="stylesheet" href="{{ asset('css/loginpage.css') }}">
+
 
   <!-- Google Identity Services -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  @vite(['resources/css/loginpage.css', 'resources/js/loginpagegit.js'])
+  @vite(['resources/css/loginpage.css', 'resources/js/loginpage.js'])
 </head>
 
 <body>
@@ -23,7 +23,7 @@
     <video class="bg-video" autoplay loop muted playsinline
       poster="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80">
       <!-- Pengguna bisa menambahkan/mengubah file video di bawah ini -->
-      <source src="fakultas-teknik-universitas-mulawarmanmp4_Al7wZnbtmn.mp4" type="video/mp4">
+      <source src="{{ asset('fakultas-teknik-universitas-mulawarmanmp4_Al7wZnbtmn.mp4') }}" type="video/mp4">
     </video>
     <div class="video-overlay"></div>
   </div>
@@ -34,7 +34,7 @@
   <header class="header-bar" id="headerBar">
     <!-- Logo di sebelah kiri header -->
     <a href="#" class="header-logo-container">
-      <img src="logo.png" alt="Logo" class="header-logo-img">
+      <img src="{{ asset('logo.png') }}" alt="Logo" class="header-logo-img">
       <div class="header-brand-text">
         <span class="brand-line-1">FAKULTAS TEKNIK</span>
         <span class="brand-line-2">UNIVERSITAS MULAWARMAN</span>
@@ -52,12 +52,12 @@
       </button>
 
       <!-- Tombol Login di sebelah kanan hidebar -->
-      <a href="login.html" class="btn-login-header" id="btnLoginHeader">
+      <a href="#" class="btn-login-header" id="btnLoginHeader" onclick="return false;">
         <span>Log In</span>
       </a>
 
       <!-- Profile Avatar jika sudah Logged In -->
-      <a href="dashboard.html" class="user-logged-in-badge" id="userLoggedBadge" title="Dashboard">
+      <a href="#" class="user-logged-in-badge" id="userLoggedBadge" title="Dashboard" onclick="return false;">
         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
           alt="User Avatar">
         <span id="userNameDisplay">Pengguna</span>

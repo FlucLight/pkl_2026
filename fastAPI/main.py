@@ -1,22 +1,19 @@
-from fastapi import FastAPI
-from sqlmodel import Session
+from fastapi import FastAPI, HTTPException
 from sqlmodel import Session, select
-from config.database import engine
+from config.database import engine, create_db_all
 from models.tugas import tugas, tugas_update
-from config.database import create_db_all
-from fastapi import HTTPException
 from contextlib import asynccontextmanager
 
 
 # untuk ambil id
-def tugas_nilai_id():
+def tugas_nilai_id(tugas_id: int):
     with Session(engine) as session:
-        result = session.get(tugas, id)
+        result = session.get(tugas, tugas_id)
         return result
 
 
 @asynccontextmanager 
-async def lifespan(app:FastAPI):
+async def lifespan(app: FastAPI):
     create_db_all()
     yield
 
@@ -28,7 +25,7 @@ def home():
     return "Halo ini API GUWEH jijir"
 
 @app.post("/tambah")
-def tambah_tugas(data_tugas:tugas):
+def tambah_tugas(data_tugas: tugas):
     with Session(engine) as session:
         session.add(data_tugas)
         session.commit()
@@ -58,7 +55,7 @@ async def editdata(tugas_id: int, tugas_data: tugas_update):
 
 
 @app.delete("/hapus/{tugas_id}")
-async def hapusTugas(tugas_id):
+async def hapusTugas(tugas_id: int):
     with Session(engine) as session:
         db_tugas = session.get(tugas, tugas_id)
         if not db_tugas:
@@ -67,4 +64,5 @@ async def hapusTugas(tugas_id):
             session.delete(db_tugas)
             session.commit()
             return "Udah dihapus mas"
+
 

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard — Fakultas Teknik UNMUL</title>
   <meta name="description" content="Dashboard pengguna Fakultas Teknik Universitas Mulawarman">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ asset('css/loginpage.css') }}">
   <!-- Google Identity Services -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <style>

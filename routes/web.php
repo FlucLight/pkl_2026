@@ -2,8 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 
+<<<<<<< Updated upstream
 Route::get('/', function () {
     return view('welcome');
+=======
+// Simpan base URL di satu tempat
+$apiBase = env('API_BASE_URL', 'http://127.0.0.1:8000');
+
+Route::get('/', fn() => view('welcome'));
+
+// READ — tampilkan data (GET ✅)
+Route::get('/data-tugas', function() use ($apiBase) {
+    $response = Http::get("{$apiBase}/ambil-tugas");
+    return response()->json($response->json());
+>>>>>>> Stashed changes
 });
 
 Route::get('/data-tugas', function(){

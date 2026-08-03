@@ -7,10 +7,11 @@
   <title>prototype pertama gw jir</title>
   <meta name="description"
     content="Template website HTML5 polos dengan background video looping, header putih kecil, hidebar drawer bold list, dan pop-up login modal.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ asset('css/loginpage.css') }}">
 
   <!-- Google Identity Services -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
+  @vite(['resources/css/loginpage.css', 'resources/js/loginpagegit.js'])
 </head>
 
 <body>
@@ -283,7 +284,7 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- JavaScript -->
-  <script src="script.js"></script>
+  <script src="{{ asset('js/loginpage.js') }}"></script>
 
   <!-- Google One Tap Callback (dipanggil dari GIS library) -->
   <script>

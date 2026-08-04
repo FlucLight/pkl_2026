@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login — Fakultas Teknik UNMUL</title>
   <meta name="description" content="Halaman login Fakultas Teknik Universitas Mulawarman">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ asset('css/loginpage.css') }}">
   <!-- Google Identity Services -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <style>
@@ -59,16 +59,16 @@
   <div class="video-bg-container">
     <video class="bg-video" autoplay loop muted playsinline
       poster="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80">
-      <source src="fakultas-teknik-universitas-mulawarmanmp4_Al7wZnbtmn.mp4" type="video/mp4">
+      <source src="{{ asset('fakultas-teknik-universitas-mulawarmanmp4_Al7wZnbtmn.mp4') }}" type="video/mp4">
     </video>
     <div class="video-overlay"></div>
   </div>
 
   <div class="auth-wrapper">
-    <a href="index.html" class="auth-back-link">← Kembali ke Beranda</a>
+    <a href="{{ url('/') }}" class="auth-back-link">← Kembali ke Beranda</a>
     <div class="auth-card">
       <div class="auth-logo">
-        <img src="logo.png" alt="Logo FT UNMUL">
+        <img src="{{ asset('logo.png') }}" alt="Logo FT UNMUL">
         <div class="auth-logo-text">
           <span class="l1">FAKULTAS TEKNIK</span>
           <span class="l2">UNIVERSITAS MULAWARMAN</span>
@@ -97,7 +97,7 @@
           <span>Masuk dengan Google</span>
         </button>
       </form>
-      <p class="auth-footer-text">Belum punya akun? <a href="register.html">Register di sini</a></p>
+      <p class="auth-footer-text">Belum punya akun? <a href="{{ url('/register') }}">Register di sini</a></p>
     </div>
   </div>
 
@@ -118,7 +118,7 @@
       if (!p) { showToast('Login Google gagal', '❌'); return; }
       sessionStorage.setItem('loggedInUser', JSON.stringify({ name: p.name || 'Pengguna Google', email: p.email || '', picture: p.picture || '' }));
       showToast('Login berhasil! Mengalihkan...', '✅');
-      setTimeout(() => window.location.href = 'dashboard.html', 1000);
+      setTimeout(() => window.location.href = '/dashboard', 1000);
     }
 
     window.addEventListener('load', () => {
@@ -134,7 +134,7 @@
       if (!user || !pass) { showToast('Isi username dan password', '⚠️'); return; }
       sessionStorage.setItem('loggedInUser', JSON.stringify({ name: user, email: '', picture: '' }));
       showToast('Login berhasil! Mengalihkan...', '✅');
-      setTimeout(() => window.location.href = 'dashboard.html', 1000);
+      setTimeout(() => window.location.href = '/dashboard', 1000);
     });
 
     document.getElementById('btnGoogleLogin').addEventListener('click', () => {

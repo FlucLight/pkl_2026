@@ -43,6 +43,11 @@
 
     <!-- Di sebelah kanan header: Hidebar & Tombol Login -->
     <div class="header-actions">
+      <!-- Tombol ke Halaman Tugas -->
+      <a href="{{ route('tugas.index') }}" class="btn-hidebar" style="text-decoration: none; color: inherit;">
+        <span>📋 Tugas Kuliah</span>
+      </a>
+
       <!-- Tombol Hidebar -->
       <button type="button" class="btn-hidebar" id="btnHidebarToggle" aria-label="Buka Menu Hidebar">
         <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">

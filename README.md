@@ -1,4 +1,4 @@
-# 📚 PKL 2026 — Learning Management System (LMS) & Microservices
+# PKL 2026 — Learning Management System (LMS) & Microservices
 
 <p align="center">
   <img src="https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel 11">
@@ -17,7 +17,7 @@ Sistem ini dirancang sebagai platform **Learning Management System (LMS) / Penge
 
 ---
 
-## 🏗️ Arsitektur Sistem (Microservices)
+## Arsitektur Sistem (Microservices)
 
 Sistem ini terdiri dari 3 komponen utama yang saling terhubung:
 
@@ -30,7 +30,7 @@ graph TD
     API2 <--> DB2[(MySQL: db_tugas)]
 ```
 
-### 🔹 Komponen Microservices:
+### Komponen Microservices:
 1. **Laravel Web Frontend (Port 8080)**: 
    Aplikasi Web utama berbasis **Laravel 11 + Jetstream (Livewire/Blade) + Tailwind CSS** yang menyajikan antarmuka interaktif bagi mahasiswa dan dosen.
 2. **FastAPI Service 1 — Master Tugas (Port 8000)**: 
@@ -40,18 +40,18 @@ graph TD
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
-- 🎨 **UI Modern & Responsive**: Berbasis Tailwind CSS dengan gaya *Earth & Heritage* (Hijau Hutan & Emas) serta tema *Figma Desktop*.
-- 🎓 **Navigasi Jurusan (Multi-Tab)**: Tab navigasi untuk setiap jurusan Fakultas Teknik UNMUL.
-- 📋 **Manajemen Tugas Kuliah**: Fitur Tambah, Edit, Hapus, dan Ubah Tugas secara visual.
-- 👨‍🏫 **Filter Tugas per Dosen**: Klik Card Dosen untuk memfilter daftar tugas dari dosen tersebut secara *real-time*.
-- 📤 **Sistem Pengumpulan Tugas Mahasiswa**: Fitur mahasiswa untuk mengumpulkan tugas dan melihat siapa saja yang sudah mengumpulkan.
-- 🟢 **Dual API Connection Status Checker**: Indikator status koneksi *real-time* ke FastAPI Service 1 dan Service 2 di bagian header.
+- **UI Modern & Responsive**: Berbasis Tailwind CSS dengan gaya *Earth & Heritage* (Hijau Hutan & Emas) serta tema *Figma Desktop*.
+- **Navigasi Jurusan (Multi-Tab)**: Tab navigasi untuk setiap jurusan Fakultas Teknik UNMUL.
+- **Manajemen Tugas Kuliah**: Fitur Tambah, Edit, Hapus, dan Ubah Tugas secara visual.
+- **Filter Tugas per Dosen**: Klik Card Dosen untuk memfilter daftar tugas dari dosen tersebut secara *real-time*.
+- **Sistem Pengumpulan Tugas Mahasiswa**: Fitur mahasiswa untuk mengumpulkan tugas dan melihat siapa saja yang sudah mengumpulkan.
+- **Dual API Connection Status Checker**: Indikator status koneksi *real-time* ke FastAPI Service 1 dan Service 2 di bagian header.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 - **Frontend**: PHP 8.2+, Laravel 11, Blade Templates, Tailwind CSS, Livewire, JavaScript.
 - **Backend Services**: Python 3.10+, FastAPI, SQLModel, Uvicorn.
@@ -60,7 +60,7 @@ graph TD
 
 ---
 
-## 🚀 Petunjuk Menjalankan Project
+## Petunjuk Menjalankan Project
 
 ### 1. Persiapan Database (MySQL / Laragon)
 Pastikan Laragon/MySQL sudah aktif. Buka phpMyAdmin (`http://localhost/phpmyadmin`) dan buat 2 database baru:
@@ -104,7 +104,7 @@ Buka browser dan akses alamat berikut:
 
 ---
 
-## 👥 Tim Praktik Kerja Lapangan (PKL)
+## Tim Praktik Kerja Lapangan (PKL)
 
 - **Asal Sekolah**: SMK Negeri 1 Tenggarong
 - **Lokasi Magang**: Fakultas Teknik Universitas Mulawarman (UNMUL)

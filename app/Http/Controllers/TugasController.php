@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\Log;
 
 class TugasController extends Controller
 {
-    // Base URL dari FastAPI
+    // Base URL dari FastAPI 1 & FastAPI 2
     private string $apiBaseUrl = 'http://127.0.0.1:8000';
+    private string $api2BaseUrl = 'http://127.0.0.1:8001';
 
     /**
      * Menampilkan halaman daftar tugas (UI Utama)
@@ -17,9 +18,12 @@ class TugasController extends Controller
     public function index()
     {
         $tugasList = [];
+        $kumpulList = [];
         $apiConnected = true;
+        $api2Connected = true;
         $errorMessage = null;
 
+        // Fetch Data Tugas dari FastAPI 1 (Port 8000)
         try {
             $response = Http::timeout(3)->get("{$this->apiBaseUrl}/ambil-tugas");
 
@@ -27,15 +31,28 @@ class TugasController extends Controller
                 $tugasList = $response->json();
             } else {
                 $apiConnected = false;
-                $errorMessage = "Gagal mengambil data dari API FastAPI. Status: " . $response->status();
+                $errorMessage = "Gagal mengambil data dari API FastAPI 1. Status: " . $response->status();
             }
         } catch (\Exception $e) {
             $apiConnected = false;
-            $errorMessage = "Tidak dapat terhubung ke server FastAPI di {$this->apiBaseUrl}. Pastikan server Python/FastAPI sudah dijalankan.";
-            Log::error("API FastAPI Error: " . $e->getMessage());
+            $errorMessage = "Tidak dapat terhubung ke server FastAPI 1 di {$this->apiBaseUrl}. Pastikan server Python/FastAPI sudah dijalankan.";
+            Log::error("API FastAPI 1 Error: " . $e->getMessage());
         }
 
-        return view('tugas.index', compact('tugasList', 'apiConnected', 'errorMessage'));
+        // Fetch Data Pengumpulan Tugas dari FastAPI 2 (Port 8001)
+        try {
+            $response2 = Http::timeout(3)->get("{$this->api2BaseUrl}/ambil-kumpul");
+            if ($response2->successful()) {
+                $kumpulList = $response2->json();
+            } else {
+                $api2Connected = false;
+            }
+        } catch (\Exception $e) {
+            $api2Connected = false;
+            Log::error("API FastAPI 2 Error: " . $e->getMessage());
+        }
+
+        return view('tugas.index', compact('tugasList', 'kumpulList', 'apiConnected', 'api2Connected', 'errorMessage'));
     }
 
     /**

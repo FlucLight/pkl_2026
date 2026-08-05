@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Tentang Proyek
+## Tentang Proyek
 
 Proyek ini merupakan **Proyek Pertama** hasil kolaborasi tim Praktik Kerja Lapangan (PKL) yang beranggotakan 3 siswa (SMK Negeri 1 Tenggarong) dalam periode **Juli – Agustus 2026**.
 
